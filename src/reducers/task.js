@@ -1,7 +1,7 @@
 import { SET_TASK_STATE } from '../constants';
-
+import mock from '../mock';
 const initialState = {
-    data: [],
+    data: mock,
 };
 
 export default function(state = initialState, action) {
