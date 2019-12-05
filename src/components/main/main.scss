@@ -16,7 +16,16 @@
 				width: 20px;
 				display: inline-block;
 				vertical-align: top;
+				cursor: pointer;
+				transition: all, .3s;
+				&:hover {
+					opacity: .5;
+				}
 			}
+		}
+		&:last-child {
+			text-align: center;
+			width: 70px;
 		}
 	}
 }

@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import text from '../text';
 import {toggleModal} from '../../../mixins';
 import './form.scss';
-import {isEmpty} from 'lodash';
-import { setTask } from "../../../actions/task";
+import {isEmpty, find} from 'lodash';
+import { addTask, editTask } from "../../../actions/task";
 import { setModal } from "../../../actions/modal";
 import { connect } from "react-redux";
 
@@ -13,8 +13,15 @@ const initialState = {
 };
 
 const Form = (props) => {
+    const {modal, task} = props;
     const [state, setState] = useState(initialState);
     const {form} = text;
+
+    useEffect(() => {
+        if(modal.taskId) {
+            setState(find(task, item => item.id === modal.taskId))
+        }
+    }, [modal.taskId]);
 
     /**
      * hide modal
@@ -42,7 +49,17 @@ const Form = (props) => {
     const save = (e) => {
         e.preventDefault();
         hideModal(e);
-        props.setTask(state);
+        props.addTask(state);
+    };
+
+    /**
+     * edit task
+     * @param e
+     */
+    const edit = (e) => {
+        e.preventDefault();
+        hideModal(e);
+        props.editTask(state)
     };
 
     return (
@@ -69,7 +86,7 @@ const Form = (props) => {
             <button type="submit" className="btn btn-default" onClick={(e) => hideModal(e)}>{form.buttonCancel}</button>
             <button type="submit"
                     className="btn btn-success"
-                    onClick={save}
+                    onClick={modal.taskId ? edit : save}
                     disabled={isEmpty(state.name) || isEmpty(state.description)}>{form.buttonSave}</button>
         </form>
     );
@@ -84,7 +101,8 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    setTask: (data) => dispatch(setTask(data)),
+    addTask: (data) => dispatch(addTask(data)),
+    editTask: (data) => dispatch(editTask(data)),
     setModal: (data) => dispatch(setModal(data)),
 });
 
