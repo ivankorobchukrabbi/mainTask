@@ -1,9 +1,8 @@
 import React  from 'react';
 import './modal.scss';
-
+import PT from "prop-types";
 
 const Modal = (props) => {
-
     return (
         <div className="wrap-modal">
             <div className="modal-main">
@@ -17,6 +16,11 @@ const Modal = (props) => {
             </div>
         </div>
     );
+};
+
+Modal.propTypes = {
+    title: PT.string.isRequired,
+    children: PT.node.isRequired,
 };
 
 export default Modal;

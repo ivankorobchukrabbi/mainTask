@@ -6,6 +6,7 @@ import {isEmpty, find} from 'lodash';
 import { addTask, editTask } from "../../../actions/task";
 import { setModal } from "../../../actions/modal";
 import { connect } from "react-redux";
+import PT from "prop-types";
 
 const initialState = {
     name: '',
@@ -92,6 +93,13 @@ const Form = (props) => {
     );
 };
 
+Form.propTypes = {
+    modal: PT.shape({}).isRequired,
+    task: PT.shape({}).isRequired,
+    setModal: PT.func.isRequired,
+    addTask: PT.func.isRequired,
+    editTask: PT.func.isRequired,
+};
 
 const mapStateToProps = (state) => {
     return {

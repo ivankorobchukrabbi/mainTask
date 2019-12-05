@@ -9,6 +9,7 @@ import { toggleModal } from '../../mixins';
 
 import './main.scss';
 import { setModal } from "../../actions/modal";
+import PT from "prop-types";
 
 
 const Main = (props) => {
@@ -65,6 +66,12 @@ const Main = (props) => {
     );
 };
 
+Main.propTypes = {
+    modal: PT.shape({}).isRequired,
+    task: PT.shape({}).isRequired,
+    setModal: PT.func.isRequired,
+    deleteTask: PT.func.isRequired,
+};
 
 const mapStateToProps = (state) => {
     return {
