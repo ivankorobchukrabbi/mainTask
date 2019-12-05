@@ -10,5 +10,10 @@ export default {
         header: [
             '#', 'Name', 'Description', 'Delete'
         ]
+    },
+    header: {
+        title: 'Task list /',
+        items: 'items',
+        subTitle: 'Create new',
     }
 }

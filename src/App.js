@@ -17,7 +17,7 @@ const App = (props) => {
             <div className="wrap-center">
                 <div className="modal-mask" onClick={() => toggleModal(props)}/>
                 <Modal title={modal.title}>
-                    <Form props={props}/>
+                    <Form/>
                 </Modal>
                 <Header />
                 <Main />

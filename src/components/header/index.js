@@ -4,17 +4,20 @@ import plus from '../../assets/img/icons/plus.png';
 import { setModal } from '../../actions/modal';
 import PT from 'prop-types';
 import {toggleModal} from '../../mixins';
+import text from '../common/text';
 
 import './header.scss';
 
 const Header = (props) => {
+    const {task} = props;
+    const {header} = text;
     return (
         <header>
             <div className="title">
-                <p>Task list / <span className="counter">0</span> items</p>
+                <p>{header.title}<span className="counter">{task.length}</span> {header.items}</p>
             </div>
             <button onClick={() => toggleModal(props)}>
-                <span>Create new</span> <i style={{backgroundImage: `url(${plus})`}}/>
+                <span>{header.subTitle}</span> <i style={{backgroundImage: `url(${plus})`}}/>
             </button>
         </header>
     );
@@ -27,7 +30,8 @@ Header.propTypes = {
 
 const mapStateToProps = (state) => {
     return {
-        modal: state.modal
+        modal: state.modal,
+        task: state.task.data,
     };
 };
 
