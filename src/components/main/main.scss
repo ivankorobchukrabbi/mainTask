@@ -1,0 +1,22 @@
+.table {
+	td, th {
+		font-size: 18px;
+		i {
+			background-size: cover;
+			background-position: center;
+			&.icon-mail {
+				height: 20px;
+				width: 22px;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 5px;
+			}
+			&.icon-remove {
+				height: 20px;
+				width: 20px;
+				display: inline-block;
+				vertical-align: top;
+			}
+		}
+	}
+}

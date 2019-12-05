@@ -1,0 +1,14 @@
+$break-small: 767px;
+$break-large: 768px;
+$break-large-right: 1024px;
+@mixin respond-to($media) {
+    @if $media == mobile {
+        @media only screen and (max-width: $break-small) { @content; }
+    }
+    @else if $media == tablet {
+        @media only screen and (min-width: $break-large) and (max-width: $break-large-right) { @content; }
+    }
+    @else if $media == tablet-portrait {
+        @media only screen and (min-width: $break-large) and (max-width: $break-large-right) and (orientation:portrait) { @content; }
+    }
+}

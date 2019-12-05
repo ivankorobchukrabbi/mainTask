@@ -1,0 +1,159 @@
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+  color: #666;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, td img {
+  vertical-align: top;
+}
+
+input, select, button, textarea {
+  margin: 0;
+  font-size: 100%;
+  color: #666;
+}
+
+input, a {
+  outline: none;
+}
+
+input[type=checkbox] {
+  vertical-align: bottom;
+}
+
+input[type=radio] {
+  vertical-align: text-bottom;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: smaller;
+}
+
+sup {
+  vertical-align: super;
+  font-size: smaller;
+}
+
+body {
+  position: relative;
+  color: #000;
+  text-align: left;
+  font: 62.5%/1.2em arial, sans-serif;
+  background: #fff;
+  line-height: 1;
+}
+
+label, input[type=button], input[type=submit], button {
+  cursor: pointer;
+}
+
+hr {
+  color: #e0e0e0;
+  background-color: #e0e0e0;
+  border: 0px none;
+  height: 1px;
+  clear: both;
+  margin: 0;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-size: 64px;
+  margin-bottom: 23px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h2 {
+  color: #FFFFFF;
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h3 {
+  color: #000000;
+  font-size: 28px;
+  line-height: 33px;
+  padding-bottom: 3px;
+}
+
+h4 {
+  color: #000000;
+  font-size: 22px;
+  line-height: 24px;
+  padding-bottom: 18px;
+}
+
+h5 {
+  color: #000000;
+  font-size: 20px;
+  line-height: 22px;
+  padding-bottom: 18px;
+}
+
+h6 {
+  color: #000000;
+  font-size: 19px;
+  line-height: 22px;
+  padding-bottom: 18px;
+}
+
+/*# sourceMappingURL=normalize.css.map */

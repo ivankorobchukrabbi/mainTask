@@ -1,0 +1,35 @@
+header {
+	position: relative;
+	padding-bottom: 22px;
+	.title {
+		font-size: 18px;
+	}
+	button {
+		position: absolute;
+		top: 0;
+		right: 0;
+		border: 0;
+		font-size: 18px;
+		transition: all, .3s;
+
+		&:hover {
+			opacity: .7;
+		}
+		&:focus {
+			box-shadow: none;
+			outline: none;
+		}
+		span {
+			display: inline-block;
+			vertical-align: middle;
+			padding-right: 5px;
+		}
+		i {
+			background-size: cover;
+			height: 30px;
+			width: 30px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+}
