@@ -11,12 +11,13 @@ import PT from "prop-types";
 
 
 const App = (props) => {
-    const {modal} = text;
+    const {modalText} = text;
+    const {modal} = props;
     return (
-        <div className={props.modal.open ? 'app active' : 'app'}>
+        <div className={modal.open ? 'app active' : 'app'}>
             <div className="wrap-center">
                 <div className="modal-mask" onClick={() => toggleModal(props)}/>
-                <Modal title={props.modal.taskId ? '' : modal.title}>
+                <Modal title={modal.taskId ? `Task # ${modal.taskId}` : modalText.title}>
                     <Form/>
                 </Modal>
                 <Header />

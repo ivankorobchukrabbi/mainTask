@@ -32,5 +32,19 @@
 		border-bottom: 1px solid #000000;
 		padding: 15px;
 		font-size: 18px;
+		position: relative;
+		i {
+			position: absolute;
+			top: 20px;
+			right: 14px;
+			width: 15px;
+			background-size: cover;
+			height: 15px;
+			transition: all, .3s;
+			cursor: pointer;
+			&:hover {
+				opacity: .7;
+			}
+		}
 	}
 }

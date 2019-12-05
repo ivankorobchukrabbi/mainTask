@@ -88,7 +88,9 @@ const Form = (props) => {
             <button type="submit"
                     className="btn btn-success"
                     onClick={modal.taskId ? edit : save}
-                    disabled={isEmpty(state.name) || isEmpty(state.description)}>{form.buttonSave}</button>
+                    disabled={isEmpty(state.name) || isEmpty(state.description)}>
+                {modal.taskId ? form.buttonEdit : form.buttonSave}
+            </button>
         </form>
     );
 };

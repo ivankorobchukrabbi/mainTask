@@ -1,10 +1,11 @@
 export default {
-    modal: {
+    modalText: {
         title: 'New Task'
     },
     form: {
         buttonCancel: 'Cancel',
         buttonSave: 'Save',
+        buttonEdit: 'Edit',
     },
     table: {
         header: [
