@@ -1,0 +1,109 @@
+{
+	"extends": "stylelint-config-standard",
+	"plugins": [
+		"stylelint-scss",
+		"stylelint-order"
+	],
+	"rules": {
+		"indentation": "tab",
+		"property-no-unknown": [true, { "ignoreProperties": ["font-smoothing", "composes"] }],
+		"selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global"] }],
+		"at-rule-no-unknown": null,
+		"order/order": [
+			"custom-properties",
+			"dollar-variables",
+			{
+				"type": "at-rule",
+				"name": "include",
+				"hasBlock": false
+			},
+			"declarations",
+			{
+				"type": "at-rule",
+				"name": "media"
+			},
+			{
+				"type": "at-rule",
+				"name": "include",
+				"parameter": "screen"
+			},
+			{
+				"type": "rule",
+				"selector": "^&?::(before|after)"
+			},
+			{
+				"type": "rule",
+				"selector": "^&_"
+			},
+			{
+				"type": "rule",
+				"selector": "^."
+			},
+			{
+				"type": "rule",
+				"selector": "^&?:\\w"
+			}
+		],
+		"order/properties-order": [
+			[
+				{
+					"emptyLineBefore": "always",
+					"properties": [
+						"composes",
+						"content",
+						"position",
+						"top",
+						"right",
+						"bottom",
+						"left",
+						"z-index",
+						"display",
+						"box-sizing",
+						"width",
+						"height",
+						"max-width",
+						"max-height",
+						"min-width",
+						"min-height",
+						"padding",
+						"padding-top",
+						"padding-right",
+						"padding-bottom",
+						"padding-left",
+						"margin",
+						"margin-top",
+						"margin-right",
+						"margin-bottom",
+						"margin-left",
+						"margin-collapse",
+						"margin-top-collapse",
+						"margin-right-collapse",
+						"margin-bottom-collapse",
+						"margin-left-collapse",
+						"float",
+						"flex-flow",
+						"flex-direction",
+						"flex-wrap",
+						"justify-content",
+						"align-items",
+						"align-content",
+						"order",
+						"flex",
+						"flex-grow",
+						"flex-shrink",
+						"flex-basis",
+						"align-self",
+						"overflow",
+						"overflow-x",
+						"overflow-y",
+						"clip",
+						"clear"
+					]
+				}
+			],
+			{
+				"unspecified": "bottom"
+			}
+		]
+	}
+}

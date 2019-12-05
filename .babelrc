@@ -1,0 +1,36 @@
+{
+	"presets": [
+		"@babel/preset-react",
+		["@babel/preset-env", {
+			"useBuiltIns": "entry",
+			"targets": {
+				"browsers": ["last 2 versions"]
+			}
+		}]
+	],
+	"plugins": [
+		"lodash",
+		["@babel/plugin-proposal-decorators", { "legacy": true }],
+		"@babel/plugin-syntax-dynamic-import",
+		"@babel/plugin-proposal-class-properties",
+		"@babel/plugin-proposal-object-rest-spread",
+		"@babel/plugin-syntax-export-default-from",
+		"@babel/plugin-proposal-export-namespace-from",
+		"transform-export-extensions",
+		[
+			"module-resolver", {
+				"root": ["./src", "./src/routes"],
+				"alias": {
+					"src": "./src",
+					"admin": "./src/routes/admin",
+					"client": "./src/routes/client",
+					"adminStyles": "./src/routes/admin/styles",
+					"clientStyles": "./src/routes/client/styles",
+					"common": "./src/common",
+					"utils": "./src/common/utils",
+					"assets": "./src/assets"
+				}
+			}
+		]
+	]
+}

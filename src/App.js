@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/header';
+import Main from './components/main';
+import Modal from './components/common/modal';
+import Form from './components/common/form';
+import { connect } from "react-redux";
+import { setModal } from "./actions/modal";
+import { toggleModal } from './mixins';
+import PT from "prop-types";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const App = (props) => {
+    return (
+        <div className={props.modal.open ? 'app active' : 'app'}>
+            <div className="wrap-center">
+                <div className="modal-mask" onClick={() => toggleModal(props)}/>
+                <Modal>
+                    <Form />
+                </Modal>
+                <Header />
+                <Main />
+            </div>
+        </div>
+    );
 }
 
-export default App;
+App.propTypes = {
+    modal: PT.shape({}).isRequired,
+    setModal: PT.func.isRequired,
+};
+
+const mapStateToProps = (state) => {
+    return {
+        modal: state.modal
+    };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+    setModal: (data) => dispatch(setModal(data)),
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
