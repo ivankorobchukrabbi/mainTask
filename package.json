@@ -1,5 +1,6 @@
 {
-  "name": "https://ivankorobchukrabbi.github.io/mainTask/",
+  "name": "task",
+  "homepage": "https://ivankorobchukrabbi.github.io/mainTask/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
