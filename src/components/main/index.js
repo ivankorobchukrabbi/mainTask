@@ -67,8 +67,11 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
-    modal: PT.shape({}).isRequired,
-    task: PT.shape({}).isRequired,
+    modal: PT.shape({
+        taskId: PT.number,
+        open: PT.bool || null,
+    }).isRequired,
+    task: PT.arrayOf(PT.shape({}).isRequired),
     setModal: PT.func.isRequired,
     deleteTask: PT.func.isRequired,
 };

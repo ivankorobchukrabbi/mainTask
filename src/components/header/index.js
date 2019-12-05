@@ -24,8 +24,11 @@ const Header = (props) => {
 };
 
 Header.propTypes = {
-    modal: PT.shape({}).isRequired,
-    task: PT.shape({}).isRequired,
+    modal: PT.shape({
+        taskId: PT.number,
+        open: PT.bool || null,
+    }).isRequired,
+    task: PT.arrayOf(PT.shape({}).isRequired),
     setModal: PT.func.isRequired,
 };
 

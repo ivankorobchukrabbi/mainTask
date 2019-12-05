@@ -94,8 +94,11 @@ const Form = (props) => {
 };
 
 Form.propTypes = {
-    modal: PT.shape({}).isRequired,
-    task: PT.shape({}).isRequired,
+    modal: PT.shape({
+        taskId: PT.number,
+        open: PT.bool || null,
+    }).isRequired,
+    task: PT.arrayOf(PT.shape({}).isRequired),
     setModal: PT.func.isRequired,
     addTask: PT.func.isRequired,
     editTask: PT.func.isRequired,
